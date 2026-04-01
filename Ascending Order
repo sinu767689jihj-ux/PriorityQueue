@@ -1,0 +1,28 @@
+import java.util.*;
+class Solution{
+    public static void main(String[] args){
+    PriorityQueue<Student> pq=new PriorityQueue<>((a,b)->a.age-b.age);
+    pq.add(new Student("SrinuMagam",56));
+    pq.add(new Student("Raja",29));
+    pq.add(new Student("Mahendra",53));
+    pq.add(new Student("ManiDeepak",87));
+    pq.add(new Student("Rahul",89));
+    pq.add(new Student("Sumalatha",73));
+    pq.add(new Student("Chandra",81));
+    while(pq.size()>0){
+        Student temp=pq.poll();
+        System.out.println(temp.name+" "+temp.age);
+    }
+    }
+}
+class Student{
+    String name;
+    int age;
+    Student(String name,int age){
+        this.name=name;
+        this.age=age;
+    }
+    public String toString(){
+        return name + " (" + age + ")";
+    }
+}
